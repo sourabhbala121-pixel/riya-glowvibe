@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Riya GlowVibe — makeup artist, beauty content creator and glam studio portfolio by Riya Aggrawal." />
+  <title>Riya GlowVibe | Makeup Artist & Beauty Creator</title>
+
+  <style>
+    :root{
+      --accent:#FF0000;
+      --accent-dark:#c80000;
+      --gold:#d4af37;
+      --gold-soft:#f7e7a8;
+      --ivory:#fffdf7;
+      --white:#ffffff;
+      --ink:#201a17;
+      --muted:#726863;
+      --glass:rgba(255,255,255,.68);
+      --border:rgba(212,175,55,.30);
+      --shadow:0 20px 60px rgba(72,47,20,.14);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(212,175,55,.19), transparent 29%),
+        radial-gradient(circle at 90% 15%, rgba(255,0,0,.08), transparent 24%),
+        linear-gradient(180deg,#fffefa 0%,#fff9e9 45%,#ffffff 100%);
+      overflow-x:hidden;
+    }
+
+    img,video{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    section{scroll-margin-top:88px}
+    .container{width:min(1160px,92%);margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.55rem;
+      color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.14em;
+      text-transform:uppercase;margin-bottom:.8rem
+    }
+    .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+    .section-title{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(2rem,4vw,4rem);line-height:1.02;
+      margin-bottom:1rem
+    }
+    .section-sub{color:var(--muted);max-width:680px;line-height:1.8}
+
+    /* NAV */
+    .nav-wrap{
+      position:fixed;top:16px;left:50%;transform:translateX(-50%);
+      width:min(1180px,94%);z-index:1000
+    }
+    nav{
+      min-height:66px;display:flex;align-items:center;justify-content:space-between;
+      padding:.65rem .85rem .65rem 1.15rem;border:1px solid rgba(255,255,255,.75);
+      border-radius:22px;background:var(--glass);backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);box-shadow:0 10px 34px rgba(69,49,24,.11)
+    }
+    .brand{display:flex;align-items:center;gap:.72rem;font-weight:900}
+    .brand-mark{
+      width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+      color:#fff;background:linear-gradient(135deg,var(--accent),#ff5b5b 55%,var(--gold));
+      box-shadow:0 7px 20px rgba(255,0,0,.22)
+    }
+    .brand span{font-family:Georgia,serif;font-size:1.05rem}
+    .brand small{display:block;color:var(--gold);font:700 .65rem/1.1 Inter,sans-serif;letter-spacing:.12em}
+    .nav-links{display:flex;align-items:center;gap:1.55rem;list-style:none}
+    .nav-links a{font-size:.9rem;font-weight:700;color:#4a3d37;transition:.2s}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{
+      color:#fff!important;background:var(--accent);padding:.8rem 1.1rem;border-radius:999px;
+      box-shadow:0 8px 20px rgba(255,0,0,.2)
+    }
+    .menu-btn{
+      display:none;border:0;background:transparent;width:42px;height:42px;border-radius:12px;cursor:pointer
+    }
+    .menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;transition:.25s}
+
+    /* HERO */
+    .hero{
+      min-height:90vh;display:flex;align-items:center;padding:120px 0 58px;position:relative;isolation:isolate
+    }
+    .hero::after{
+      content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+      right:-140px;top:110px;background:rgba(212,175,55,.13);filter:blur(2px);z-index:-1
+    }
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:4rem;align-items:center}
+    .hero h1{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(3.6rem,8vw,7.2rem);line-height:.88;letter-spacing:-.055em
+    }
+    .hero h1 .script{display:block;color:var(--accent);font-style:italic;font-weight:500}
+    .hero p{font-size:1.08rem;line-height:1.8;color:var(--muted);max-width:590px;margin:1.4rem 0 1.75rem}
+    .hero-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+    .btn{
+      border:1px solid transparent;padding:1rem 1.35rem;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-weight:800;
+      cursor:pointer;transition:transform .22s,box-shadow .22s,background .22s
+    }
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 30px rgba(255,0,0,.22)}
+    .btn-light{background:rgba(255,255,255,.84);border-color:var(--border);box-shadow:0 8px 24px rgba(60,40,10,.08)}
+    .mini-proof{display:flex;align-items:center;gap:1rem;margin-top:2rem;color:var(--muted);font-size:.86rem}
+    .avatars{display:flex}
+    .avatars i{
+      width:33px;height:33px;border-radius:50%;border:2px solid #fff;margin-left:-8px;
+      background:linear-gradient(135deg,#ffd8d8,#f4d98a);display:grid;place-items:center;font-style:normal
+    }
+    .avatars i:first-child{margin-left:0}
+
+    .hero-card{
+      position:relative;min-height:550px;border-radius:44px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.1)),
+        url("https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1000&q=85") center/cover;
+      box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.75);overflow:hidden
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(29,16,8,.72))
+    }
+    .floating-badge{
+      position:absolute;left:-32px;top:55px;padding:1rem 1.1rem;border-radius:18px;
+      background:rgba(255,255,255,.9);backdrop-filter:blur(12px);box-shadow:var(--shadow);
+      font-size:.8rem;font-weight:900;color:var(--accent);transform:rotate(-4deg)
+    }
+    .hero-card-info{position:absolute;left:25px;right:25px;bottom:24px;color:#fff}
+    .hero-card-info small{text-transform:uppercase;letter-spacing:.16em;color:#ffe6a2;font-weight:800}
+    .hero-card-info h3{font:italic 2rem/1.1 Georgia,serif;margin-top:.45rem}
+
+    /* MARQUEE */
+    .marquee{overflow:hidden;border-block:1px solid var(--border);background:rgba(255,255,255,.65)}
+    .marquee-track{
+      display:flex;width:max-content;gap:2.3rem;padding:1rem 0;
+      animation:scroll 22s linear infinite;font-weight:900;text-transform:uppercase;letter-spacing:.12em;
+      color:#6f5848;font-size:.8rem
+    }
+    .marquee-track span::after{content:"✦";color:var(--accent);margin-left:2.3rem}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+
+    /* SECTIONS */
+    .section{padding:100px 0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+    .about-visual{
+      min-height:480px;border-radius:36px;background:
+      url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85") center/cover;
+      position:relative;box-shadow:var(--shadow)
+    }
+    .about-stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem
+    }
+    .stat{padding:1rem;border-radius:18px;background:#fff;border:1px solid var(--border)}
+    .stat b{display:block;font:700 1.7rem Georgia,serif;color:var(--accent)}
+    .stat span{font-size:.78rem;color:var(--muted)}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.6rem}
+    .service-card{
+      padding:1.5rem;border-radius:var(--radius);background:rgba(255,255,255,.78);
+      border:1px solid var(--border);box-shadow:0 12px 32px rgba(80,54,18,.07);
+      transition:.25s;position:relative;overflow:hidden
+    }
+    .service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+    .service-card::after{
+      content:"";position:absolute;right:-26px;top:-26px;width:92px;height:92px;border-radius:50%;
+      background:rgba(212,175,55,.12)
+    }
+    .service-icon{
+      width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,#fff1c0,#fff);
+      display:grid;place-items:center;font-size:1.45rem;margin-bottom:1.2rem;border:1px solid var(--border)
+    }
+    .service-card h3{font:700 1.3rem Georgia,serif;margin-bottom:.5rem}
+    .service-card p{color:var(--muted);line-height:1.7;font-size:.93rem}
+
+    /* FEED */
+    .feed-head{display:flex;align-items:end;justify-content:space-between;gap:1rem}
+    .feed-status{
+      font-size:.78rem;font-weight:800;color:var(--muted);padding:.65rem .9rem;border-radius:999px;
+      background:#fff;border:1px solid var(--border)
+    }
+    .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .reel-card{
+      position:relative;border-radius:28px;overflow:hidden;background:#1c1714;aspect-ratio:9/14;
+      box-shadow:var(--shadow);border:1px solid rgba(212,175,55,.24)
+    }
+    .reel-card video,.reel-card img{width:100%;height:100%;object-fit:cover}
+    .reel-overlay{
+      position:absolute;left:0;right:0;bottom:0;padding:4rem 1.2rem 1.2rem;
+      background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff
+    }
+    .reel-overlay b{display:block;font-size:.94rem;line-height:1.4}
+    .reel-overlay small{color:#f8dda0}
+    .reel-badge{
+      position:absolute;top:14px;left:14px;background:rgba(255,0,0,.92);color:#fff;
+      padding:.45rem .7rem;border-radius:999px;font-size:.7rem;font-weight:900;letter-spacing:.08em
+    }
+
+    /* TESTIMONIAL/CONTACT */
+    .quote{
+      padding:2.2rem;border-radius:30px;background:linear-gradient(135deg,#fff,#fff8df);
+      border:1px solid var(--border);box-shadow:var(--shadow);text-align:center
+    }
+    .quote p{font:italic clamp(1.35rem,2.5vw,2rem)/1.55 Georgia,serif;max-width:880px;margin:auto}
+    .quote b{display:block;margin-top:1rem;color:var(--accent)}
+    .contact-card{
+      padding:clamp(2rem,5vw,4rem);border-radius:40px;background:
+      radial-gradient(circle at 80% 10%,rgba(255,255,255,.22),transparent 20%),
+      linear-gradient(135deg,#cf0000,#ff0000 56%,#e3b541);
+      color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;
+      box-shadow:0 28px 70px rgba(155,0,0,.25)
+    }
+    .contact-card h2{font:italic clamp(2.2rem,5vw,4.7rem)/1 Georgia,serif}
+    .contact-card p{margin-top:1rem;line-height:1.8;color:#ffecec;max-width:650px}
+    .contact-actions{display:flex;flex-direction:column;gap:.8rem}
+    .contact-actions .btn{background:#fff;color:var(--accent)}
+    .contact-actions .btn.alt{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.4)}
+
+    footer{padding:34px 0 45px;text-align:center;color:var(--muted);font-size:.85rem}
+    footer b{color:var(--accent)}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:.75s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:900px){
+      .hero-grid,.about-grid,.contact-card{grid-template-columns:1fr}
+      .hero{padding-top:120px}
+      .hero-card{min-height:490px}
+      .floating-badge{left:14px}
+      .services-grid,.feed-grid{grid-template-columns:repeat(2,1fr)}
+      .feed-grid .reel-card:last-child{grid-column:1/-1;max-width:420px;width:100%;justify-self:center}
+      .menu-btn{display:block}
+      .nav-links{
+        position:absolute;left:0;right:0;top:76px;display:none;flex-direction:column;align-items:stretch;
+        gap:.3rem;padding:.8rem;border-radius:20px;background:rgba(255,255,255,.94);
+        backdrop-filter:blur(18px);border:1px solid var(--border);box-shadow:var(--shadow)
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{display:block;padding:.9rem 1rem;border-radius:12px}
+      .nav-links a:hover{background:#fff6e6}
+    }
+
+    @media (max-width:640px){
+      .section{padding:76px 0}
+      .hero h1{font-size:clamp(3.1rem,17vw,5.5rem)}
+      .hero-card{min-height:420px;border-radius:30px}
+      .services-grid,.feed-grid{grid-template-columns:1fr}
+      .feed-grid .reel-card:last-child{grid-column:auto}
+      .reel-card{max-width:390px;width:100%;justify-self:center}
+      .about-stats{grid-template-columns:1fr}
+      .feed-head{align-items:flex-start;flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .brand span{font-size:.95rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-wrap">
+    <nav>
+      <a class="brand" href="#home" aria-label="Riya GlowVibe home">
+        <div class="brand-mark">RG</div>
+        <div>
+          <span>Riya GlowVibe</span>
+          <small>BEAUTY • GLAM • CREATOR</small>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Glow Menu</a></li>
+        <li><a href="#reels">Latest Reels</a></li>
+        <li><a class="nav-cta" href="#contact">Book Glam</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Indian soul • American glam</div>
+          <h1>Glow Like <span class="script">You Mean It.</span></h1>
+          <p>
+            Hey gorgeous — I’m <strong>Riya Aggrawal</strong>, the face behind
+            <strong>Riya GlowVibe</strong>. Bridal glam, soft-girl beauty, party looks and
+            scroll-stopping content made with a little desi sparkle and a lot of confidence.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">✦ Book Your Glow</a>
+            <a class="btn btn-light" href="https://www.instagram.com/" target="_blank" rel="noopener">◎ @riyaaggrawal</a>
+          </div>
+
+          <div class="mini-proof">
+            <div class="avatars"><i>💄</i><i>✨</i><i>👑</i></div>
+            <span>Looks designed to feel confident, camera-ready & completely you.</span>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" aria-label="Makeup beauty portrait">
+          <div class="floating-badge">TRENDING GLAM ✨</div>
+          <div class="hero-card-info">
+            <small>Signature Look</small>
+            <h3>Golden-hour skin. Main-character energy.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Bridal Glam</span><span>Soft Glam</span><span>Party Makeup</span><span>Beauty Reels</span><span>Hair Styling</span>
+        <span>Bridal Glam</span><span>Soft Glam</span><span>Party Makeup</span><span>Beauty Reels</span><span>Hair Styling</span>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal"></div>
+        <div class="reveal">
+          <div class="eyebrow">Meet your glam girl</div>
+          <h2 class="section-title">Desi detail.<br>Global beauty energy.</h2>
+          <p class="section-sub">
+            Riya GlowVibe blends the richness of Indian bridal beauty with modern,
+            editorial-inspired glam. Every look is tailored around your features, your outfit,
+            your event and — most importantly — your comfort.
+          </p>
+          <div class="about-stats">
+            <div class="stat"><b>100+</b><span>Glow moments</span></div>
+            <div class="stat"><b>3x</b><span>Signature styles</span></div>
+            <div class="stat"><b>∞</b><span>Good-vibe energy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="eyebrow">Glow menu</div>
+        <h2 class="section-title">Pick your kind of pretty.</h2>
+        <p class="section-sub">From elegant bridal looks to viral beauty content, choose a beauty experience built to photograph beautifully and still feel like you.</p>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">👑</div>
+            <h3>Bridal Glow</h3>
+            <p>Long-wear, photo-ready bridal makeup with luminous skin, refined eyes and customized detailing.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">✨</div>
+            <h3>Soft Glam</h3>
+            <p>Fresh, polished and flattering glam for birthdays, dinners, shoots and special days.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">💄</div>
+            <h3>Party Beat</h3>
+            <p>Bold eyes, statement lips or glossy skin — a high-energy glam look made for your event.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">🎥</div>
+            <h3>Beauty Reels</h3>
+            <p>Short-form beauty content, transformations, product moments and trend-led creator collaborations.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">🌸</div>
+            <h3>Hair Styling</h3>
+            <p>Soft waves, sleek styles and occasion-ready finishing touches that complete your beauty look.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">📸</div>
+            <h3>Creator Collabs</h3>
+            <p>UGC-inspired beauty videos and aesthetic content packages for makeup, skincare and fashion brands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reels">
+      <div class="container">
+        <div class="feed-head">
+          <div>
+            <div class="eyebrow">Fresh from Instagram</div>
+            <h2 class="section-title">Latest glow drops.</h2>
+            <p class="section-sub">The feed attempts to load the newest three video posts from your configured RSS source. If a feed is unavailable, polished placeholders appear instead.</p>
+          </div>
+          <div class="feed-status" id="feedStatus">Loading latest posts…</div>
+        </div>
+
+        <div class="feed-grid" id="feedGrid">
+          <article class="reel-card">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80" alt="Beauty makeup look">
+            <span class="reel-badge">REEL 01</span>
+            <div class="reel-overlay"><b>Soft-glam skin with a golden finish ✨</b><small>@riyaaggrawal</small></div>
+          </article>
+          <article class="reel-card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80" alt="Makeup products">
+            <span class="reel-badge">REEL 02</span>
+            <div class="reel-overlay"><b>From simple to statement in one glow-up 💄</b><small>@riyaaggrawal</small></div>
+          </article>
+          <article class="reel-card">
+            <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=800&q=80" alt="Beauty editorial makeup">
+            <span class="reel-badge">REEL 03</span>
+            <div class="reel-overlay"><b>Bridal mood: radiant, elegant, unforgettable 👑</b><small>@riyaaggrawal</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="quote reveal">
+          <p>“Makeup should never hide you — it should turn up the volume on the confidence that was already there.”</p>
+          <b>— Riya GlowVibe</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="eyebrow" style="color:#ffe39a">Ready for your glow-up?</div>
+            <h2>Let’s create your main-character moment.</h2>
+            <p>For appointments, bridal enquiries, creator collaborations and beauty campaigns, connect with Riya on Instagram.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">◎ Message @riyaaggrawal</a>
+            <a class="btn alt" href="mailto:hello@example.com">✉ Brand Collaboration</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> <b>Riya GlowVibe</b> — Crafted for beauty, confidence & content.
+  </footer>
+
+  <script>
+    // ---------- Mobile Navigation ----------
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // ---------- Reveal on scroll ----------
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ---------- Instagram / RSS feed ----------
+    /*
+      Instagram does not provide a simple public RSS URL for every account.
+
+      To enable this section:
+      1) Create/use an RSS feed for the Instagram account with a service you trust
+         (for example, a self-hosted RSSHub instance or another RSS provider).
+      2) Put that feed URL into RSS_URL below.
+      3) This demo uses rss2json as a browser-friendly RSS-to-JSON proxy because
+         direct RSS fetches are commonly blocked by CORS in browsers.
+
+      For production, self-host your RSS/proxy endpoint where possible.
+    */
+
+    const RSS_URL = ""; // Example: "https://YOUR-RSS-FEED-URL"
+    const RSS_TO_JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
+
+    const feedGrid = document.getElementById("feedGrid");
+    const feedStatus = document.getElementById("feedStatus");
+
+    function firstUrl(text = "") {
+      const match = text.match(/https?:\/\/[^\s"'<>]+/i);
+      return match ? match[0] : "";
+    }
+
+    function getMedia(item) {
+      const candidates = [
+        item.enclosure && item.enclosure.link,
+        item.thumbnail,
+        item.media && item.media.content && item.media.content.url,
+        firstUrl(item.description || "")
+      ].filter(Boolean);
+
+      return candidates[0] || "";
+    }
+
+    function isVideo(url, item) {
+      const type = (item.enclosure && item.enclosure.type) || "";
+      return type.includes("video") || /\.(mp4|webm|mov)(\?|$)/i.test(url);
+    }
+
+    function escapeHTML(value = "") {
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadInstagramFeed() {
+      if (!RSS_URL) {
+        feedStatus.textContent = "Demo feed • add RSS_URL to go live";
+        return;
+      }
+
+      try {
+        const response = await fetch(RSS_TO_JSON + encodeURIComponent(RSS_URL));
+        if (!response.ok) throw new Error("Feed request failed");
+
+        const data = await response.json();
+        if (data.status !== "ok" || !Array.isArray(data.items)) {
+          throw new Error("Invalid feed");
+        }
+
+        const items = data.items.slice(0, 3);
+        if (!items.length) throw new Error("No feed items");
+
+        feedGrid.innerHTML = items.map((item, index) => {
+          const media = getMedia(item);
+          const title = escapeHTML((item.title || "Latest beauty reel").replace(/<[^>]*>/g, ""));
+          const link = escapeHTML(item.link || "#");
+          const mediaSafe = escapeHTML(media);
+
+          const mediaMarkup = media
+            ? (isVideo(media, item)
+                ? `<video src="${mediaSafe}" muted playsinline loop preload="metadata" aria-label="${title}"></video>`
+                : `<img src="${mediaSafe}" alt="${title}" loading="lazy">`)
+            : `<div style="height:100%;display:grid;place-items:center;color:white;padding:2rem;text-align:center">Latest Instagram post</div>`;
+
+          return `
+            <article class="reel-card">
+              <a href="${link}" target="_blank" rel="noopener" aria-label="Open Instagram post">
+                ${mediaMarkup}
+                <span class="reel-badge">REEL 0${index + 1}</span>
+                <div class="reel-overlay">
+                  <b>${title}</b>
+                  <small>@riyaaggrawal</small>
+                </div>
+              </a>
+            </article>
+          `;
+        }).join("");
+
+        // Auto-play only actual video elements, muted for browser autoplay rules.
+        document.querySelectorAll(".reel-card video").forEach(video => {
+          video.play().catch(() => {});
+        });
+
+        feedStatus.textContent = "Live • latest 3 posts";
+      } catch (error) {
+        console.warn("RSS feed fallback:", error);
+        feedStatus.textContent = "Preview feed • live RSS unavailable";
+      }
+    }
+
+    loadInstagramFeed();
+  </script>
+</body>
+</html>
